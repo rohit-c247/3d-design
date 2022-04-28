@@ -1,4 +1,4 @@
-@media (orientation: portrait) {
+/* @media (orientation: portrait) {
   :root {
     --container-width: var(--viewport-width, 100vw);
     --container-height: calc(var(--viewport-height, 100vh) * 0.6);
@@ -19,7 +19,7 @@
     --left-close-icon-position: 14.8em;
     --float-gui-top: 1vh;
   }
-}
+} */
 body {
   position: relative;
   top: 0;
@@ -42,10 +42,9 @@ canvas {
 }
 .sidebar-container {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 0;
+  width: 400px;
+  height: 150px;
+  right: 0;
   z-index: 2;
 }
 .sidebar-container > * {
@@ -56,17 +55,16 @@ canvas {
   left: 0;
 }
 .sidebar-icon-container {
-  padding: 0.5em;
-  background-color: #eceeef;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  height: 3em;
+  padding: 0.5rem 0.14rem;
+  background-color: #7952b3;
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
   display: flex;
   flex-wrap: nowrap;
   align-content: center;
   justify-content: flex-start;
   align-items: center;
-  padding: 0.2em;
   margin: 0;
+  display: none;
 }
 .sidebar-icon-container > .sidebar-icons > .sidebar-icon {
   border-bottom: 1px dashed #d3d3d3;
@@ -74,20 +72,16 @@ canvas {
   height: 2.5em;
   border-radius: 1.5em;
   background-color: #fff;
-  display: inline-block;
   padding-top: 0.1em;
   box-shadow: 0 2px 5px 0 rgb(0 0 0/16%), 0 2px 10px 0 rgb(0 0 0/12%);
   margin-left: 0.4em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 .sidebar-icon-container > .sidebar-icons > .sidebar-icon > .fa {
-  font-size: 150%;
-  padding-top: 0;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  opacity: 0.4;
-  text-align: center;
-  vertical-align: middle;
+  font-size: 22px;
+  color: #1e79fd;
 }
 .sidebar-icon-container
   > .sidebar-icons
@@ -99,27 +93,19 @@ canvas {
 .sidebar-icon-container > .sidebar-icons > .sidebar-icon > input[type="radio"] {
   display: none;
 }
-.sidebar-icon-container > .sidebar-icons > .sidebar-icon > .fa {
-  width: 2em;
-  height: 2em;
-  text-align: center;
-  vertical-align: middle;
-  margin-left: -0.2em;
-  margin-top: 0.25em;
-}
-.sidebar-item {
+/* .sidebar-item {
   height: 0;
   width: 0;
-}
+} */
 .sidebar-item > .sidebar-close {
   position: absolute;
-  top: -0.1em;
+  top: 0.5em;
   left: var(--left-close-icon-position);
-  width: 2em;
-  height: 2em;
   font-size: 1.6em;
   text-align: center;
   vertical-align: bottom;
+  font-weight: 400;
+  color: #fff;
 }
 .sidebar-item > .sidebar-close > input[type="checkbox"] {
   display: none;
@@ -141,14 +127,20 @@ canvas {
   overflow-x: hidden;
   padding-top: 0;
 }
+.sidebar-content h4 {
+  font-size: 18px;
+}
 .sidebar-content {
-  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), white),
-    linear-gradient(to top, rgba(20, 20, 20, 0.25), rgba(255, 255, 255, 0));
-  background-position: bottom center, bottom center;
-  background-repeat: no-repeat;
-  background-color: #fff;
-  background-size: 100% 10em, 100% 3em;
-  background-attachment: local, scroll;
+  background-color: #1f1f1f;
+  padding: 0.75rem;
+  background-image: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.01)
+  );
+  border-radius: 0.75rem;
+  box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 10%);
+  color: #fff;
 }
 .sidebar-content .vsl-input-container {
   border: 1px solid #eee;
@@ -163,6 +155,7 @@ canvas {
   background-color: rgba(255, 255, 255, 0.7);
   border-radius: 0.2em;
   text-align: center;
+  display: none;
 }
 .float-gui .vsl-input-container {
   width: 22em;
