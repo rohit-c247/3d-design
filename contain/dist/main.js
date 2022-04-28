@@ -58154,7 +58154,7 @@
     (w || (w = {})).getSidebar = function () {
       return o.extend({
         template:
-          '<div class="sidebar-container" :class="{collapsed: isCollapsed}">\n              <div class="sidebar-icon-container">\n               <div v-for="ci in componentInfo" class="sidebar-icons">\n                <label class="sidebar-icon">\n                   <input type="radio" name="sidebar-menu" :value="ci.name" v-model="currentComponentName" @click="goDirectly()"/>\n                   <i class="fa " :class="ci.icon" aria-hidden="true"></i>\n                </label> \n              </div>\n              </div>\n              <div v-show="!isCollapsed" class="sidebar-item" transition="expand">\n                 <label class="sidebar-close">\n                   <input type="checkbox" v-model="isCollapsed"/>\n                    <i class="fas fa-times" aria-hidden="true"></i>\n                 </label> \n\t\t\t\t\t\t\t\t <div class="sidebar-content">\n\t\t\t\t\t\t\t\t\t\t\t <component :is="currentComponentName" >\n\t\t\t\t\t\t\t\t\t\t\t </component>\n\t\t\t\t\t\t\t\t </div>\n                 </div>\n            </div>',
+          '<div class="sidebar-container" :class="{collapsed: isCollapsed}">\n                   <div v-show="!isCollapsed" class="sidebar-item" transition="expand">\n                  \n\t\t\t\t\t\t\t\t <div class="sidebar-content">\n\t\t\t\t\t\t\t\t\t\t\t <component :is="currentComponentName" >\n\t\t\t\t\t\t\t\t\t\t\t </component>\n\t\t\t\t\t\t\t\t </div>\n                 </div>\n            </div>',
         data: function () {
           return {
             componentInfo: [],
@@ -60656,31 +60656,31 @@
           faIcon: "fa-cube",
           activeDropTargetIds: [],
           ui: [
-            {
-              key: "style.baseColorRAL",
-              kind: "ralcode",
-              opts: {
-                label: "step2framecolor",
-                codes: ["9016", "9007", "9017"],
-              },
-            },
-            {
-              key: "style.roofColorRAL",
-              kind: "ralcode",
-              opts: {
-                label: "step2roofcolor",
-                codes: ["9016", "9007", "9017"],
-              },
-            },
+            // {
+            //   key: "style.baseColorRAL",
+            //   kind: "ralcode",
+            //   opts: {
+            //     label: "step2framecolor",
+            //     codes: ["9016", "9007", "9017"],
+            //   },
+            // },
+            // {
+            //   key: "style.roofColorRAL",
+            //   kind: "ralcode",
+            //   opts: {
+            //     label: "step2roofcolor",
+            //     codes: ["9016", "9007", "9017"],
+            //   },
+            // },
             {
               key: "size.width",
               kind: "slider",
               templatePrefix: ["<h4>{{$t('step2title2')}}</h4>"],
               opts: {
                 label: "step2width",
-                min: 250,
-                max: 1200,
-                step: 50,
+                min: 200,
+                max: 600,
+                step: 1,
                 unit: "cm",
               },
             },
@@ -60691,8 +60691,8 @@
               opts: {
                 label: "step2depth",
                 min: 200,
-                max: 800,
-                step: 50,
+                max: 400,
+                step: 1,
                 unit: "cm",
               },
             },
@@ -60702,9 +60702,9 @@
               templatePrefix: "",
               opts: {
                 label: "step2height",
-                min: 180,
-                max: 300,
-                step: 10,
+                min: 250,
+                max: 529,
+                step: 1,
                 unit: "cm",
               },
             },
