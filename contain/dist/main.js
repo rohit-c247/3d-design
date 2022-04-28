@@ -41678,6 +41678,7 @@
           }),
           (e.prototype.roofDome = function (e, n, r, i, o, a, s) {
             if ("none" !== n) {
+              console.log('roofDomeroofDome');
               if (i > r) {
                 var l = this.roofDome(e, n, i, r, o, a, s);
                 return (
@@ -41833,6 +41834,7 @@
             ]);
           }),
           (e.prototype.__angularDome = function (e) {
+            console.log('==== __angularDome')
             var t = Math.tan((e.angle * Math.PI) / 180),
               n = new r.Vector3(e.width / 2, 0, -e.depth / 2),
               i = new r.Vector3(-e.width / 2, 0, -e.depth / 2),
@@ -50016,6 +50018,7 @@
                 (this.materials.aluminium.roughness = 0.6));
             var x = this.materials.aluminium,
               b = mt({}, n);
+              console.log('switch',t)
             switch (t) {
               case "gap":
                 break;
@@ -50868,6 +50871,7 @@
                     (Se.position.z = -Math.sin(_e) * (we / 2)),
                     _.add(Se);
                 }
+                console.log('1111111111',(l.push(d, 0, -2), t))
                 switch ((l.push(d, 0, -2), t)) {
                   case "accordeonDoorLeft":
                     l.push([_]);
@@ -56493,17 +56497,17 @@
                                 ),
                               },
                               i = postUrl.split(
-                                "https://productconfigurator.virtualsaleslab.com/"
+                                "http://localhost/3d-design/"
                               );
                             i[i.length - 1] = i[i.length - 1].replace(
                               /\-/g,
-                              "https://productconfigurator.virtualsaleslab.com/"
+                              "http://localhost/3d-design/"
                             );
                             var o,
                               a,
                               s,
                               l = i.join(
-                                "https://productconfigurator.virtualsaleslab.com/"
+                                "http://localhost/3d-design/"
                               ),
                               c = n.$get("vars.customRedirectFunction");
                             (o = postUrl),
@@ -58859,13 +58863,15 @@
           var h = function () {
             return console.warn("empty updatemesh called");
           };
+          console.log('builders')
           if (
             (I(c, e.config.builders.materials, t),
             e.serverParameters && e.serverParameters.meta.openInVR)
           ) {
+            console.log('sdsddsdsds');
             var d = window.location.href.replace(
               /\/share\//gi,
-              "https://productconfigurator.virtualsaleslab.com/vr/"
+              "http://localhost/3d-design/vr/"
             );
             window.location.replace(d);
           } else if (e.config.data.meta.loginRequired && !e.isLoggedIn)
@@ -58890,6 +58896,7 @@
             this.getEditorGui(c, t, u, e),
               this.hideProgressIndicatorWhenDone(this.gui.updateMesh),
               this.registerPopupListener(c, h, t);
+              console.log('dsssssssssss');
           t.newBuilder.loadTexturesAndMaterial(
             e.config.builders,
             new o({
@@ -59655,6 +59662,7 @@
                   return (n.src = Object(i.c)(r)), n;
                 },
                 planViews: function () {
+                  console.log('planViews')
                   var e = JSON.parse(JSON.stringify(this.$data));
                   e.interactive.inArchitectureMode = !0;
                   var n = t.newBuilder.build(
@@ -60048,7 +60056,7 @@
                       var s = new XMLHttpRequest();
                       (o = o.replace(
                         /\/(share|vr)\//i,
-                        "https://productconfigurator.virtualsaleslab.com/designdata/"
+                        "http://localhost/3d-design/designdata/"
                       )),
                         (s.onreadystatechange = function () {
                           if (4 == this.readyState && 200 == this.status) {
@@ -60331,7 +60339,7 @@
       n.d(t, "CSSTerraceroof", function () {
         return c;
       }),
-      (function (e) {
+      (function (e) { 
         var t = function () {};
         (e.EditorData = t),
           (e.defaultData = {
@@ -60339,6 +60347,7 @@
               width: 600,
               height: 220,
               depth: 450,
+              roofAngleDegrees: 10,
             },
             style: {
               type: "patioroof",
@@ -60696,6 +60705,7 @@
                 unit: "cm",
               },
             },
+
             {
               key: "size.height",
               kind: "slider",
@@ -60706,6 +60716,18 @@
                 max: 529,
                 step: 1,
                 unit: "cm",
+              },
+            },
+            {
+              key: "size.roofAngleDegrees",
+              kind: "slider",
+              templatePrefix: "",
+              opts: {
+                label: "step2roofAngleDegrees",
+                min: 10,
+                max: 45,
+                step: 1,
+                unit: "%",
               },
             },
           ],
@@ -60867,6 +60889,7 @@
         ],
       },
       builders: {
+       
         vars: l(
           s.vars({
             hasScreens: function (e) {
@@ -60895,8 +60918,9 @@
               return Math.max(t.right, t.back) < n.height - 10;
             },
             roofDetails: function (e) {
+              console.log('roofDetails',(25 / 360) , Math.PI)
               var t = e.size,
-                n = (25 / 360) * Math.PI,
+                n = (t.roofAngleDegrees / 360) * Math.PI,
                 r = t.width / 2 - 5.5,
                 i = t.depth / 2 - 5.5;
               return {
@@ -61565,6 +61589,7 @@
           step2screencolor: "Screens",
           step2title2: "Bepaal de afmetingen",
           step2width: "Breedte",
+          step2roofAngleDegrees: "Angle of the roof",
           step2depth: "Diepte",
           step2height: "Hoogte voorzijde",
           step3title1: "Screens, deuren en ramen",
@@ -61626,6 +61651,7 @@
           step2screencolor: "Screens",
           step2title2: "Dimensions",
           step2width: "Width",
+          step2roofAngleDegrees: "Angle of the roof",
           step2depth: "Depth",
           step2height: "Height",
           step3title1: "Screens, doors and windows",
@@ -61688,6 +61714,7 @@
           step2screencolor: "Markisen",
           step2title2: "Legen Sie die Größe fest",
           step2width: "Breite",
+          step2roofAngleDegrees: "Angle of the roof",
           step2depth: "Tiefe",
           step2height: "Höhe",
           step3title1: "Sonnenschutzmarkisen, Türen und Fenster",
@@ -61751,6 +61778,7 @@
           step2screencolor: "Écrans",
           step2title2: "Définissez les dimensions",
           step2width: "Largeur",
+          step2roofAngleDegrees: "Angle of the roof",
           step2depth: "Profondeur",
           step2height: "Hauteur",
           step3title1: "Écrans pare-soleil, portes et fenêtres",
