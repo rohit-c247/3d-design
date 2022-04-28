@@ -1,4 +1,4 @@
-@media (orientation: portrait) {
+/* @media (orientation: portrait) {
   :root {
     --container-width: var(--viewport-width, 100vw);
     --container-height: calc(var(--viewport-height, 100vh) * 0.6);
@@ -19,7 +19,7 @@
     --left-close-icon-position: 14.8em;
     --float-gui-top: 1vh;
   }
-}
+} */
 body {
   position: relative;
   top: 0;
@@ -42,10 +42,9 @@ canvas {
 }
 .sidebar-container {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 0;
+  width: 400px;
+  height: 150px;
+  right: 0;
   z-index: 2;
 }
 .sidebar-container > * {
@@ -94,10 +93,10 @@ canvas {
 .sidebar-icon-container > .sidebar-icons > .sidebar-icon > input[type="radio"] {
   display: none;
 }
-.sidebar-item {
+/* .sidebar-item {
   height: 0;
   width: 0;
-}
+} */
 .sidebar-item > .sidebar-close {
   position: absolute;
   top: 0.5em;
@@ -128,9 +127,20 @@ canvas {
   overflow-x: hidden;
   padding-top: 0;
 }
+.sidebar-content h4 {
+  font-size: 18px;
+}
 .sidebar-content {
-  background-color: #f7f5fb;
-  height: 450px;
+  background-color: #1f1f1f;
+  padding: 0.75rem;
+  background-image: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.01)
+  );
+  border-radius: 0.75rem;
+  box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 10%);
+  color: #fff;
 }
 .sidebar-content .vsl-input-container {
   border: 1px solid #eee;
