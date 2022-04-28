@@ -129,6 +129,9 @@ canvas {
 }
 .sidebar-content h4 {
   font-size: 18px;
+  margin: 0;
+  padding: 10px 12px;
+  border-bottom: 2px solid #dedede;
 }
 .sidebar-content {
   background-color: #1f1f1f;
@@ -142,9 +145,9 @@ canvas {
   box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 10%);
   color: #fff;
 }
-.sidebar-content .vsl-input-container {
-  border: 1px solid #eee;
-}
+/* .sidebar-content .vsl-input-container {
+  border-bottom: 1px solid #eee;
+} */
 .float-gui {
   display: block;
   position: absolute;
@@ -551,4 +554,18 @@ i.fa.fa-reynaers-contact {
 }
 i.fa.fa-reynaers-photoupload {
   background-image: url("../../Content/designers/reynaers/icons/9.%20Photoupload.png");
+}
+input[type="number"] {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
