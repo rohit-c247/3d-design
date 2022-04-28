@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+  <head>
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="On-line 3D configurator" />
+    <link rel="shortcut icon" href="#" type="image/x-icon" />
+    <title>3D configurator</title>
+    <style>
+      .loader {
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        background: url("https://i.pinimg.com/originals/45/12/4d/45124d126d0f0b6d8f5c4d635d466246.gif")
+          50% 50% no-repeat rgb(249, 249, 249);
+        opacity: 0.75;
+      }
+    </style>
+    <script>
+      window.onload = function () {
+        var $ldr = document.querySelector(".loader");
+        if ($ldr) {
+          $ldr.classList.remove("loader");
+        }
+      };
+
+      var serverParameters = null;
+      var id = "";
+      var screenshotUrl = "";
+      var logoUrl = "";
+      var contentRoute = "";
+      var postUrl = "";
+      var postImageUrl = "";
+      var postContentUrl = "";
+      var language = "en";
+    </script>
+    <link
+      href="contain/dist/css/style0e42.css?v=20220331010556"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/font-awesome/css/all.min.css" />
+
+    <style type="text/css">
+      #vsl-box {
+        background: #f0faff;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+        padding: 0.5em;
+        opacity: 0.85;
+        position: absolute;
+        right: 1em;
+        bottom: 1em;
+        transition: 0.3s;
+        opacity: 0.25;
+        width: 4em;
+        text-align: center;
+        overflow: hidden;
+        height: 1em;
+        padding-top: 0.15em;
+        z-index: 1;
+      }
+
+      #vsl-box:hover {
+        opacity: 0.85;
+        width: 20em;
+      }
+
+      @media screen and (max-device-height: 800px) {
+        #vsl-box {
+          transform-origin: bottom left;
+          transform: scale(0.6);
+          left: 0.5em;
+          bottom: 0.5em;
+        }
+      }
+
+      #vr-qr-code {
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        margin-left: -75px;
+        margin-top: -75px;
+        background-color: white;
+      }
+
+      #vr-qr-code > div {
+        display: inline-block;
+        text-align: center;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      .gdpr-line input[type="checkbox"] {
+        width: 2em;
+      }
+
+      .gdpr-line label {
+        width: 12em;
+        display: inline;
+      }
+
+      .gdpr-line label a {
+        text-decoration: underline;
+      }
+
+      .gdpr-line .gdpr-explanation {
+        display: none;
+      }
+
+      .gdpr-line a:hover + div.gdpr-explanation {
+        display: block;
+        position: relative;
+        background-color: lightgray;
+        border-radius: 2px;
+        padding: 1em;
+        width: 90%;
+        margin-top: -26em;
+        height: 20em;
+        z-index: 1000;
+        font-size: x-small;
+        margin-left: 1em;
+        margin-bottom: 5em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="loader"></div>
+
+    <div
+      class=""
+      style="
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        top: 0px;
+        left: 1px;
+        z-index: 0;
+        background-repeat-y: no-repeat;
+        background-position-y: center;
+        background-position-x: center;
+        background-repeat-x: repeat;
+        background-size: auto;
+        opacity: 0.15;
+        background-color: white;
+        pointer-events: none;
+      "
+    ></div>
+    <div id="sidebar-container" role="main"></div>
+    <div id="float-gui"></div>
+
+    <script src="contain/dist/main.js"></script>
+
+    <div id="vsl-box">© 2022 - all rights reserved</div>
+    <script src="contain/dist/rocket-loader.min.js"></script>
+  </body>
+</html>
