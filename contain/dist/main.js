@@ -56306,8 +56306,8 @@
                     var t = parseFloat(e.target.value);
                     (t = Math.max(Math.min(t, this.opts.max), this.opts.min)),
                       this.$dispatch("valuechanged", this.key, t);
-                  },
-                },
+                  }
+                }
               })
             ),
             this.componentBuilder.register(
@@ -56327,8 +56327,8 @@
                     var t = parseFloat(e.target.value);
                     (t = Math.max(Math.min(t, this.opts.max), this.opts.min)),
                       this.$dispatch("valuechanged", this.key, t);
-                  },
-                },
+                  }
+                }
               })
             ),
             this.componentBuilder.register(
@@ -56336,7 +56336,7 @@
               o.extend({
                 props: ["opts"],
                 template:
-                  '\n                <div class="vsl-wrapper">\n                  <slot></slot>\n                </div>',
+                  '\n                <div class="vsl-wrapper">\n                  <slot></slot>\n                </div>'
               })
             ),
             this.componentBuilder.register(
@@ -56347,7 +56347,7 @@
                   return {
                     ralCodes:
                       this.opts && this.opts.codes ? this.opts.codes : y.codes,
-                    colorPickerVisible: !1,
+                    colorPickerVisible: !1
                   };
                 },
                 computed: {
@@ -56356,7 +56356,7 @@
                   },
                   isColorPickerVisible: function () {
                     return this.colorPickerVisible || this.opts.alwaysExpand;
-                  },
+                  }
                 },
                 methods: {
                   toggleVisibility: function () {
@@ -56380,12 +56380,12 @@
                       a = r * r + i * i + o * o < 49152;
                     return {
                       backgroundColor: t.rgbHex,
-                      color: a ? "white" : "black",
+                      color: a ? "white" : "black"
                     };
-                  },
+                  }
                 },
                 template:
-                  '\n            <div class="vsl-input-container vsl-ral-picker">\n                <input type="hidden" :value.sync="value" />\n                <label>{{this.$t(opts.label)}} </label> \n                <input class="vsl-ral-main-button" type="button" :value="value" @click="toggleVisibility"\n                       :style="getInfoStyle(info.code)"  /><span> {{info.name}}</span>\n                <div v-if="isColorPickerVisible" class="vsl-ral-picker-inner-container" :style="{maxHeight: opts.containerHeight}">\n                    <input type="button" v-for="ralCode in ralCodes"\n                     class="vsl-ral-color-button"\n                     :style="getInfoStyle(ralCode)"\n                     :value="ralCode" @click="setRalCode"/>\n                </div>\n            </div>',
+                  '\n            <div class="vsl-input-container vsl-ral-picker">\n        <div class="selected-color">        <input type="hidden" :value.sync="value" />\n                <label>{{this.$t(opts.label)}} </label><div >                <input class="vsl-ral-main-button" type="button" :value="value" @click="toggleVisibility"\n                       :style="getInfoStyle(info.code)"  /><span> {{info.name}}</span>\n </div>    </div>           <div  class="vsl-ral-picker-inner-container" :style="{maxHeight: opts.containerHeight}">\n                   <div :class="value===ralCode ? `color-circle active-div` : `color-circle`" v-for="ralCode in ralCodes"\n> <input type="button"                          :style="getInfoStyle(ralCode)"\n  :class="value===ralCode ? `vsl-ral-color-button active` : `vsl-ral-color-button`"                    :value="ralCode" @click="setRalCode"/> </div>\n                </div>\n            </div>'
               })
             ),
             this.componentBuilder.register(
@@ -56393,7 +56393,7 @@
               o.extend({
                 props: ["value", "opts"],
                 template:
-                  '\n            <div class="vsl-input-container vsl-checkbox">\n              <label> <input v-model="value" type="checkbox" /> {{$t(opts.label)}} </label>\n            </div>',
+                  '\n            <div class="vsl-input-container vsl-checkbox">\n              <label> <input v-model="value" type="checkbox" /> {{$t(opts.label)}} </label>\n            </div>'
               })
             ),
             this.componentBuilder.register(
@@ -56425,8 +56425,8 @@
                   perspective: function () {
                     e.cameraCombiner.toPerspective(),
                       (e.controls.enableRotate = !0);
-                  },
-                },
+                  }
+                }
               })
             ),
             this.componentBuilder.register(
@@ -56434,7 +56434,7 @@
               o.extend({
                 props: ["value", "opts"],
                 template:
-                  '\n            <div class="vsl-input-container vsl-textbox">\n              <label v-if="opts.label"> {{$t(opts.label)}} </label>\n               <input :value.sync="value" type="textbox" :placeholder="opts.placeholder" :style="opts.style" /> \n            </div>',
+                  '\n            <div class="vsl-input-container vsl-textbox">\n              <label v-if="opts.label"> {{$t(opts.label)}} </label>\n               <input :value.sync="value" type="textbox" :placeholder="opts.placeholder" :style="opts.style" /> \n            </div>'
               })
             ),
             this.componentBuilder.register(
@@ -56446,8 +56446,8 @@
                 methods: {
                   printPlanViews: function () {
                     this.$parent.printPlanViews();
-                  },
-                },
+                  }
+                }
               })
             ),
             this.componentBuilder.register(
@@ -56455,7 +56455,7 @@
               o.extend({
                 props: ["value", "opts"],
                 template:
-                  '\n            <div class="vsl-input-container vsl-select" :class="{\'multi-line\': opts.multiLine}">\n                <label> {{$t(opts.label)}} </label>\n                <select :v-model="value" :value="value">\n                    <option v-for="item in opts.items" :value="item.key">{{$t(item.label)}}</option>\n                </select>\n            </div>\n            ',
+                  '\n            <div class="vsl-input-container vsl-select" :class="{\'multi-line\': opts.multiLine}">\n                <label> {{$t(opts.label)}} </label>\n                <select :v-model="value" :value="value">\n                    <option v-for="item in opts.items" :value="item.key">{{$t(item.label)}}</option>\n                </select>\n            </div>\n            '
               })
             ),
             this.componentBuilder.register(
@@ -56463,7 +56463,7 @@
               o.extend({
                 props: ["value", "opts"],
                 template:
-                  '\n            <div class="vsl-input-container vsl-imagelist" >\n                <label v-for="item in opts.items"> \n                    <input type="radio" v-model="value" :value="item.key" />\n                    <img :alt="item.label||item.key" :src="opts.imagesPath+item.key+opts.imagesExtension"/>\n                    <div v-if="item.label" class="vsl-imagelist-label">{{$t(item.label)}}</div>\n                </label>\n            </div>\n            ',
+                  '\n            <div class="vsl-input-container vsl-imagelist" >\n                <label v-for="item in opts.items"> \n                    <input type="radio" v-model="value" :value="item.key" />\n                    <img :alt="item.label||item.key" :src="opts.imagesPath+item.key+opts.imagesExtension"/>\n                    <div v-if="item.label" class="vsl-imagelist-label">{{$t(item.label)}}</div>\n                </label>\n            </div>\n            '
               })
             ),
             this.componentBuilder.register(
@@ -56494,11 +56494,9 @@
                                 imageData: e.replace(
                                   /^data:image\/(png|jpg);base64,/,
                                   ""
-                                ),
+                                )
                               },
-                              i = postUrl.split(
-                                "http://localhost/3d-design/"
-                              );
+                              i = postUrl.split("http://localhost/3d-design/");
                             i[i.length - 1] = i[i.length - 1].replace(
                               /\-/g,
                               "http://localhost/3d-design/"
@@ -56506,9 +56504,7 @@
                             var o,
                               a,
                               s,
-                              l = i.join(
-                                "http://localhost/3d-design/"
-                              ),
+                              l = i.join("http://localhost/3d-design/"),
                               c = n.$get("vars.customRedirectFunction");
                             (o = postUrl),
                               (a = t),
@@ -56550,7 +56546,7 @@
                               r.send(a);
                           },
                           {
-                            resize: !0,
+                            resize: !0
                           }
                         ),
                         !1
@@ -56566,7 +56562,7 @@
                           "email",
                           "zip",
                           "city",
-                          "phone",
+                          "phone"
                         ]
                       ).indexOf(e)
                     );
@@ -56584,11 +56580,11 @@
                           "city",
                           "phone",
                           "remarks",
-                          "GDPR message",
+                          "GDPR message"
                         ]
                       ).indexOf(e)
                     );
-                  },
+                  }
                 },
                 computed: {
                   redirectAfterPost: function () {
@@ -56602,7 +56598,7 @@
                       this.wasSubmitted &&
                       (this.meta.allowEdit || (this.meta.loginRequired && t))
                     );
-                  },
+                  }
                 },
                 locales: {
                   en: {
@@ -56617,7 +56613,7 @@
                     savebutton: "Send",
                     remarks: "Remarks",
                     subscribeNewsletter:
-                      "My data may be used to get more information about our products.",
+                      "My data may be used to get more information about our products."
                   },
                   nl: {
                     name: "Naam",
@@ -56631,7 +56627,7 @@
                     savebutton: "Verzend",
                     remarks: "Opmerkingen",
                     subscribeNewsletter:
-                      "Mijn gegevens mogen gebruikt worden om meer info te krijgen over onze producten.",
+                      "Mijn gegevens mogen gebruikt worden om meer info te krijgen over onze producten."
                   },
                   de: {
                     name: "Name",
@@ -56645,7 +56641,7 @@
                     savebutton: "Senden",
                     remarks: "Bemerkungen",
                     subscribeNewsletter:
-                      "Meine Daten dürfen verwendet werden, um weitere Informationen zu unseren Produkten zu erhalten.",
+                      "Meine Daten dürfen verwendet werden, um weitere Informationen zu unseren Produkten zu erhalten."
                   },
                   fr: {
                     name: "Nom",
@@ -56659,7 +56655,7 @@
                     savebutton: "Envoyer",
                     remarks: "Remarques",
                     subscribeNewsletter:
-                      "Mes données peuvent être utilisées pour obtenir plus d'informations sur nos produits.",
+                      "Mes données peuvent être utilisées pour obtenir plus d'informations sur nos produits."
                   },
                   it: {
                     name: "Nome",
@@ -56673,7 +56669,7 @@
                     savebutton: "Invia",
                     remarks: "Osservazioni",
                     subscribeNewsletter:
-                      " I miei dati possono essere utilizzati per ricevere informazioni su nostri prodotti",
+                      " I miei dati possono essere utilizzati per ricevere informazioni su nostri prodotti"
                   },
                   es: {
                     name: "Nombre",
@@ -56687,7 +56683,7 @@
                     savebutton: "Enviar",
                     remarks: "Observaciones",
                     subscribeNewsletter:
-                      "Mis datos se pueden utilizar para obtener más información sobre nuestros productos.",
+                      "Mis datos se pueden utilizar para obtener más información sobre nuestros productos."
                   },
                   pt: {
                     name: "Nome",
@@ -56701,7 +56697,7 @@
                     savebutton: "Enviar",
                     remarks: "Observações",
                     subscribeNewsLetter:
-                      "Meus dados podem ser usados para obter mais informações sobre nossos produtos.",
+                      "Meus dados podem ser usados para obter mais informações sobre nossos produtos."
                   },
                   ru: {
                     name: "Фамилия",
@@ -56715,7 +56711,7 @@
                     savebutton: "Отправить",
                     remarks: "замечания",
                     subscribeNewsLetter:
-                      "Мои данные могут быть использованы для получения дополнительной информации о наших продуктах.",
+                      "Мои данные могут быть использованы для получения дополнительной информации о наших продуктах."
                   },
                   hu: {
                     name: "vezetéknév",
@@ -56729,9 +56725,9 @@
                     savebutton: "küldeni",
                     remarks: "megjegyzések",
                     subscribeNewsLetter:
-                      "Adataimat felhasználhatjuk arra, hogy további információkat szerezzünk termékeinkről.",
-                  },
-                },
+                      "Adataimat felhasználhatjuk arra, hogy további információkat szerezzünk termékeinkről."
+                  }
+                }
               })
             ),
             this.componentBuilder.register(
@@ -56749,7 +56745,7 @@
                   },
                   label: function () {
                     return this.opts.label || "Take a screenshot";
-                  },
+                  }
                 },
                 methods: {
                   screenshot: function () {
@@ -56802,7 +56798,7 @@
                         if (!this.opts.fn)
                           return void alert("No fn defined in opts");
                         var n = {
-                            event: e,
+                            event: e
                           },
                           r = ["event"];
                         Object.keys(this.$parent.$data).forEach(function (e) {
@@ -56818,8 +56814,8 @@
                           ";";
                         new Function("__pars__", i)(n);
                     }
-                  },
-                },
+                  }
+                }
               })
             ),
             this.componentBuilder.register(
@@ -56828,7 +56824,7 @@
                 props: ["value", "opts", "key"],
                 data: function () {
                   return {
-                    currentKeyIndex: 0,
+                    currentKeyIndex: 0
                   };
                 },
                 template:
@@ -56836,7 +56832,7 @@
                 methods: {
                   onChange: function (e) {
                     this.$dispatch("change", e);
-                  },
+                  }
                 },
                 computed: {
                   allKeys: function () {
@@ -56860,8 +56856,8 @@
                   },
                   currentVertices: function () {
                     return this.allPolygons[this.currentKeyIndex];
-                  },
-                },
+                  }
+                }
               })
             ),
             this.componentBuilder.register(
@@ -56875,7 +56871,7 @@
                     newPolygonLayer: "",
                     vertices: [],
                     otherPolygons: [],
-                    hiddenLayers: [],
+                    hiddenLayers: []
                   };
                 },
                 template:
@@ -56916,8 +56912,8 @@
                           [50, 350],
                           [50, 50],
                           [350, 50],
-                          [350, 350],
-                        ],
+                          [350, 350]
+                        ]
                       };
                     this.value.push(n),
                       this.cleanupData(),
@@ -56955,7 +56951,7 @@
                       index: this.currentPolyIndex,
                       label: "unknown",
                       layer: "unknown",
-                      vertices: [],
+                      vertices: []
                     });
                   },
                   selectRoom: function (e) {
@@ -56981,7 +56977,7 @@
                       this.value.forEach(function (e, t) {
                         return (e.index = t);
                       });
-                  },
+                  }
                 },
                 computed: {
                   allKeys: function () {
@@ -57000,13 +56996,13 @@
                       .filter(function (e, t, n) {
                         return n.indexOf(e) === t;
                       });
-                  },
+                  }
                 },
                 watch: {
                   vertices: function (e, t) {
                     (this.currentPoly().vertices = e),
                       this.$dispatch("valuechanged", this.key, this.value);
-                  },
+                  }
                 },
                 ready: function () {
                   var e = this;
@@ -57015,7 +57011,7 @@
                       e.$el.querySelector(".zoom-button").click(),
                         e.$el.querySelector(".new-polygon-layer").focus();
                     });
-                },
+                }
               })
             ),
             this.componentBuilder.register(
@@ -57028,7 +57024,7 @@
                     isLoading: !1,
                     prevMouseEvent: null,
                     eventListeners: [],
-                    groundMesh: null,
+                    groundMesh: null
                   };
                 },
                 template:
@@ -57100,7 +57096,7 @@
                     if (((s.y *= -1), this.draggingIndex > -1))
                       return {
                         newIndex: this.draggingIndex,
-                        local: s,
+                        local: s
                       };
                     var l = this.value.reduce(
                       function (e, t) {
@@ -57111,19 +57107,19 @@
                           ? e
                           : {
                               index: t.index,
-                              distanceSQ: n,
+                              distanceSQ: n
                             };
                       },
                       {
                         index: -1,
-                        distanceSQ: 1e4,
+                        distanceSQ: 1e4
                       }
                     ).index;
                     return (
                       l > -1 || this.cursorMesh.scale.setScalar(1),
                       {
                         newIndex: l,
-                        local: s,
+                        local: s
                       }
                     );
                   },
@@ -57222,7 +57218,7 @@
                                   index: t.value.length,
                                   rotation: 0,
                                   position: [0, 0, 0],
-                                  camHeight: 145,
+                                  camHeight: 145
                                 };
                               Object.assign(o, t.opts.defaultFileOpts || {}),
                                 t.value.push(o),
@@ -57321,7 +57317,7 @@
                       backgroundSize: "cover",
                       backgroundPositionX: 30 * e.rotation + "em",
                       width: "15em",
-                      height: "15em",
+                      height: "15em"
                     };
                   },
                   reOrder: function () {
@@ -57334,15 +57330,15 @@
                       }),
                       (this.currentImageIndex = e.index),
                       this.$dispatch("valuechanged", this.key, this.value);
-                  },
+                  }
                 },
                 computed: {
                   currentPic: function () {
                     return this.currentImageIndex < 0
                       ? null
                       : this.value[this.currentImageIndex];
-                  },
-                },
+                  }
+                }
               })
             ),
             this.componentBuilder.register(
@@ -57355,7 +57351,7 @@
                     isLoading: !1,
                     prevMouseEvent: null,
                     eventListeners: [],
-                    groundMesh: null,
+                    groundMesh: null
                   };
                 },
                 template:
@@ -57383,7 +57379,7 @@
                             var s = {
                               label: i,
                               url: r,
-                              index: t.value.length,
+                              index: t.value.length
                             };
                             Object.assign(
                               s,
@@ -57423,8 +57419,8 @@
                       )),
                       this.$dispatch("valuechanged", this.key, this.value),
                       (this.cursorMesh.visible = !1);
-                  },
-                },
+                  }
+                }
               })
             ),
             this.componentBuilder.register(
@@ -57436,14 +57432,14 @@
                     t = e.homography || {
                       position: {
                         x: 0.5,
-                        y: 0.5,
+                        y: 0.5
                       },
                       rotation: {
                         x: 0,
-                        y: 0,
+                        y: 0
                       },
                       scale: 0.4,
-                      imageSrc: null,
+                      imageSrc: null
                     };
                   return (
                     (e.homography = t),
@@ -57452,7 +57448,7 @@
                     {
                       uploading: !1,
                       homography: t,
-                      originalHomographyJSON: JSON.stringify(t),
+                      originalHomographyJSON: JSON.stringify(t)
                     }
                   );
                 },
@@ -57502,7 +57498,7 @@
                       var t = e.target;
                       this.updatePosition({
                         x: e.clientX / t.clientWidth / 2 + 0.25,
-                        y: e.clientY / t.clientHeight / 2 + 0.25,
+                        y: e.clientY / t.clientHeight / 2 + 0.25
                       });
                     }
                   },
@@ -57615,9 +57611,9 @@
                   movePlane: function (e, t) {
                     this.updatePosition({
                       x: this.homography.position.x + e,
-                      y: this.homography.position.y + t,
+                      y: this.homography.position.y + t
                     });
-                  },
+                  }
                 },
                 watch: {},
                 computed: {
@@ -57626,8 +57622,8 @@
                       "always" === this.$parent.meta.allowPicture ||
                       this.$parent.meta.wasSubmitted
                     );
-                  },
-                },
+                  }
+                }
               })
             ),
             this.componentBuilder.register(
@@ -57641,19 +57637,19 @@
                         this.value || {
                           position: {
                             x: 0.5,
-                            y: 0.5,
+                            y: 0.5
                           },
                           rotation: {
                             x: 0,
-                            y: 0,
+                            y: 0
                           },
                           scale: 0.4,
-                          imageSrc: null,
+                          imageSrc: null
                         }
                       )
                     ),
                     originalHomographyJSON: JSON.stringify(this.value),
-                    joystickInUse: !1,
+                    joystickInUse: !1
                   };
                 },
                 template:
@@ -57702,12 +57698,12 @@
                       1 === e.buttons &&
                         this.updateRotation({
                           x: this.value.rotation.x - e.movementY / 100,
-                          y: this.value.rotation.y + e.movementX / 100,
+                          y: this.value.rotation.y + e.movementX / 100
                         }),
                         2 === e.buttons &&
                           this.updatePosition({
                             x: e.clientX / t.clientWidth / 2 + 0.25,
-                            y: e.clientY / t.clientHeight / 2 + 0.25,
+                            y: e.clientY / t.clientHeight / 2 + 0.25
                           });
                     }
                   },
@@ -57742,7 +57738,7 @@
                       n = e.y;
                     this.$dispatch("valuechanged", "homography.position", {
                       x: t,
-                      y: n,
+                      y: n
                     });
                   },
                   updateRotation: function (e) {
@@ -57750,7 +57746,7 @@
                       n = e.y;
                     this.$dispatch("valuechanged", "homography.rotation", {
                       x: t,
-                      y: n,
+                      y: n
                     });
                   },
                   updateScale: function (e) {
@@ -57789,10 +57785,10 @@
                   movePlane: function (e, t) {
                     this.updatePosition({
                       x: this.homography.position.x + e,
-                      y: this.homography.position.y + t,
+                      y: this.homography.position.y + t
                     });
-                  },
-                },
+                  }
+                }
               })
             ),
             this.componentBuilder.register(
@@ -57804,14 +57800,14 @@
                     t = e.homography || {
                       position: {
                         x: 0.5,
-                        y: 0.5,
+                        y: 0.5
                       },
                       rotation: {
                         x: 0,
-                        y: 0,
+                        y: 0
                       },
                       scale: 0.4,
-                      imageSrc: null,
+                      imageSrc: null
                     };
                   return (
                     (e.homography = t),
@@ -57819,7 +57815,7 @@
                     {
                       uploading: !1,
                       homography: t,
-                      originalHomographyJSON: JSON.stringify(t),
+                      originalHomographyJSON: JSON.stringify(t)
                     }
                   );
                 },
@@ -57855,8 +57851,8 @@
                         }),
                         o.send(i);
                     }
-                  },
-                },
+                  }
+                }
               })
             ),
             this.componentBuilder.register(
@@ -57915,7 +57911,7 @@
                       y:
                         this.element.minHeight > 0
                           ? this.element.minHeight
-                          : this.bboxSize.height - this.element.minHeight,
+                          : this.bboxSize.height - this.element.minHeight
                     };
                   },
                   maxSize: function () {
@@ -57931,7 +57927,7 @@
                         this.element.maxHeight > 0
                           ? this.element.maxHeight
                           : this.bboxSize.height - this.element.maxHeight
-                      ),
+                      )
                     };
                   },
                   rotation: {
@@ -57951,8 +57947,8 @@
                             "].rotation[2]",
                           e
                         );
-                    },
-                  },
+                    }
+                  }
                 },
                 methods: {
                   setY: function (e) {
@@ -57994,8 +57990,8 @@
                         this.key + "[" + (this.value.length - 1) + "].width",
                         e
                       );
-                  },
-                },
+                  }
+                }
               })
             );
         }
@@ -60665,22 +60661,6 @@
           faIcon: "fa-cube",
           activeDropTargetIds: [],
           ui: [
-            // {
-            //   key: "style.baseColorRAL",
-            //   kind: "ralcode",
-            //   opts: {
-            //     label: "step2framecolor",
-            //     codes: ["9016", "9007", "9017"],
-            //   },
-            // },
-            // {
-            //   key: "style.roofColorRAL",
-            //   kind: "ralcode",
-            //   opts: {
-            //     label: "step2roofcolor",
-            //     codes: ["9016", "9007", "9017"],
-            //   },
-            // },
             {
               key: "size.width",
               kind: "slider",
@@ -60690,8 +60670,8 @@
                 min: 200,
                 max: 600,
                 step: 1,
-                unit: "cm",
-              },
+                unit: "cm"
+              }
             },
             {
               key: "size.depth",
@@ -60702,8 +60682,8 @@
                 min: 200,
                 max: 400,
                 step: 1,
-                unit: "cm",
-              },
+                unit: "cm"
+              }
             },
 
             {
@@ -60715,8 +60695,8 @@
                 min: 250,
                 max: 529,
                 step: 1,
-                unit: "cm",
-              },
+                unit: "cm"
+              }
             },
             {
               key: "size.roofAngleDegrees",
@@ -60727,11 +60707,53 @@
                 min: 10,
                 max: 45,
                 step: 1,
-                unit: "%",
-              },
+                unit: "%"
+              }
             },
-          ],
-        },
+            {
+              key: "style.baseColorRAL",
+              kind: "ralcode",
+              opts: {
+                label: "step2framecolor",
+                codes: [
+                  "1000",
+                  "1011",
+                  "1017",
+                  "1019",
+                  "2011",
+                  "3028",
+                  "5015",
+                  "9010",
+                  "9018",
+                  "9016",
+                  "9007",
+                  "9017"
+                ]
+              }
+            },
+            {
+              key: "style.roofColorRAL",
+              kind: "ralcode",
+              opts: {
+                label: "step2roofcolor",
+                codes: [
+                  "1000",
+                  "1011",
+                  "1017",
+                  "1019",
+                  "2011",
+                  "3028",
+                  "5015",
+                  "9010",
+                  "9018",
+                  "9016",
+                  "9007",
+                  "9017"
+                ]
+              }
+            }
+          ]
+        }
         // {
         //   faIcon: "fa-sun",
         //   activeDropTargetIds: [
@@ -60863,8 +60885,8 @@
               min: 0,
               max: 100,
               step: 5,
-              unit: "%",
-            },
+              unit: "%"
+            }
           },
           {
             key: "interactive.sunRotation",
@@ -60874,22 +60896,21 @@
               min: -180,
               max: 180,
               step: 5,
-              unit: "%",
-            },
+              unit: "%"
+            }
           },
           {
             key: "homography.enabled",
             kind: "checkbox",
             templatePrefix: "<template v-if='homography.available'>",
             opts: {
-              label: "Use background picture",
+              label: "Use background picture"
             },
-            templatePostfix: "</template>",
-          },
-        ],
+            templatePostfix: "</template>"
+          }
+        ]
       },
       builders: {
-       
         vars: l(
           s.vars({
             hasScreens: function (e) {
@@ -60918,7 +60939,7 @@
               return Math.max(t.right, t.back) < n.height - 10;
             },
             roofDetails: function (e) {
-              console.log('roofDetails',(25 / 360) , Math.PI)
+              console.log("roofDetails", 25 / 360, Math.PI);
               var t = e.size,
                 n = (t.roofAngleDegrees / 360) * Math.PI,
                 r = t.width / 2 - 5.5,
@@ -60928,16 +60949,16 @@
                   [r, i],
                   [r, -i],
                   [-r, -i],
-                  [-r, i],
+                  [-r, i]
                 ],
                 topVerts: [
                   [r, i],
-                  [-r, i],
+                  [-r, i]
                 ],
                 edgeTopIndexes: [0, 0, 1, 1],
-                height: t.depth * Math.sin(n),
+                height: t.depth * Math.sin(n)
               };
-            },
+            }
           })
         ),
         glassDecorations: [
@@ -60949,7 +60970,7 @@
             meshThickness: 12,
             meshDepth: 12,
             materialId: "base",
-            offset: [0, 5, 0],
+            offset: [0, 5, 0]
           },
           {
             id: "palen links/rechts",
@@ -60959,26 +60980,26 @@
             meshThickness: 12,
             meshDepth: 12,
             materialId: "base",
-            offset: [0, 5, 0],
-          },
+            offset: [0, 5, 0]
+          }
         ],
         textures: [
           {
             id: "brick",
-            imageUrl: "textures/house/brick-wall.jpg",
+            imageUrl: "textures/house/brick-wall.jpg"
           },
           {
             id: "bluestone tiles",
-            imageUrl: "textures/floor/featuredflooring.jpg",
+            imageUrl: "textures/floor/featuredflooring.jpg"
           },
           {
             id: "fabric",
             imageUrl: "textures/sidingtypes/fabric.jpg",
             repeat: {
               x: 0.5,
-              y: 0.5,
-            },
-          },
+              y: 0.5
+            }
+          }
         ],
         materials: [
           {
@@ -60986,44 +61007,44 @@
             metalness: 0.1,
             roughness: 0.7,
             map: {
-              textureId: "brick",
-            },
+              textureId: "brick"
+            }
           },
           {
             id: "fabric",
             bump: {
               textureId: "fabric",
-              bumpScale: 0.1,
+              bumpScale: 0.1
             },
             opacity: 0.93,
-            colorRAL: "$style.screenColorRAL",
+            colorRAL: "$style.screenColorRAL"
           },
           {
             id: "bluestone tiles",
             metalness: 0.1,
             roughness: 0.7,
             map: {
-              textureId: "bluestone tiles",
+              textureId: "bluestone tiles"
             },
             bump: {
               textureId: "bluestone tiles",
-              bumpScale: 0.1,
-            },
+              bumpScale: 0.1
+            }
           },
           {
             id: "base",
             colorRAL: "$style.baseColorRAL",
             roughness: 0.4,
             metalness: 0.3,
-            useEnvMap: !0,
+            useEnvMap: !0
           },
           {
             id: "roof",
             colorRAL: "$style.roofColorRAL",
             roughness: 0.4,
             metalness: 0.3,
-            useEnvMap: !0,
-          },
+            useEnvMap: !0
+          }
         ],
         elements: [
           {
@@ -61032,14 +61053,14 @@
             height: 200,
             width: 200,
             opts: {
-              url: "models/diningroom.dae",
+              url: "models/diningroom.dae"
             },
             baseMaterialId: "blackMetal",
             swapUV: !1,
             scale: [4.75, 4.75, 4.75],
             position: [-80, 0, 0],
             float: !0,
-            rotation: [-Math.PI / 2, 0, 0],
+            rotation: [-Math.PI / 2, 0, 0]
           },
           {
             id: "indoorplant",
@@ -61047,14 +61068,14 @@
             height: 1500,
             width: 500,
             opts: {
-              url: "models/indoorplant.dae",
+              url: "models/indoorplant.dae"
             },
             baseMaterialId: "blackMetal",
             swapUV: !1,
             scale: [25.75, 25.75, 25.75],
             position: [-150, 20, 0],
             float: !0,
-            rotation: [-Math.PI / 2, 0, 0],
+            rotation: [-Math.PI / 2, 0, 0]
           },
           {
             id: "glass",
@@ -61065,9 +61086,9 @@
               edgeVerts: "$vars.roofDetails.edgeVerts",
               topVerts: "$vars.roofDetails.topVerts",
               edgeTopIndexes: "$vars.roofDetails.edgeTopIndexes",
-              spanWidth: 90,
+              spanWidth: 90
             },
-            position: [0, 0, -15],
+            position: [0, 0, -15]
           },
           {
             id: "pole",
@@ -61075,10 +61096,10 @@
             height: 12,
             width: 12,
             opts: {
-              height: "$size.height",
+              height: "$size.height"
             },
             baseMaterialId: "base",
-            swapUV: !1,
+            swapUV: !1
           },
           {
             id: "screen",
@@ -61090,7 +61111,7 @@
             minWidth: 0,
             maxWidth: 0,
             minHeight: 0,
-            maxHeight: 0,
+            maxHeight: 0
           },
           {
             id: "gondula",
@@ -61102,7 +61123,7 @@
             minWidth: 0,
             maxWidth: 0,
             minHeight: 0,
-            maxHeight: 0,
+            maxHeight: 0
           },
           {
             id: "schuifraam",
@@ -61112,7 +61133,7 @@
               elementType: "window",
               id: "window",
               width: 118,
-              height: 180,
+              height: 180
             },
             width: 230,
             minWidth: 0,
@@ -61121,7 +61142,7 @@
             minHeight: 0,
             maxHeight: 0,
             pctOpen: "$interactive.pctOpen",
-            position: [0, -6, -2],
+            position: [0, -6, -2]
           },
           {
             id: "vast raam",
@@ -61133,7 +61154,7 @@
             height: 180,
             minHeight: 0,
             maxHeight: 0,
-            position: [0, -6, -2],
+            position: [0, -6, -2]
           },
           {
             id: "Glazen schuifdeuren",
@@ -61147,8 +61168,8 @@
             maxWidth: 0,
             swapUV: !1,
             pctOpen: "$interactive.pctOpen",
-            position: [0, -6, -2],
-          },
+            position: [0, -6, -2]
+          }
         ],
         models: [
           {
@@ -61158,12 +61179,12 @@
                 name: "floor",
                 type: "plane",
                 id: "floor",
-                visible: "$!homography.enabled",
+                visible: "$!homography.enabled"
               },
               {
                 name: "shadow floor",
                 type: "plane",
-                id: "shadow floor",
+                id: "shadow floor"
               },
               {
                 name: "pole links voor",
@@ -61172,9 +61193,9 @@
                 position: [
                   "$size.width/2-6",
                   "$size.height/2",
-                  "$-size.depth/2+6",
+                  "$-size.depth/2+6"
                 ],
-                visible: "$vars.leftFrontVisible",
+                visible: "$vars.leftFrontVisible"
               },
               {
                 name: "pole rechts voor",
@@ -61182,9 +61203,9 @@
                 position: [
                   "$-size.width/2+6",
                   "$size.height/2",
-                  "$-size.depth/2+6",
+                  "$-size.depth/2+6"
                 ],
-                visible: "$vars.rightFrontVisible",
+                visible: "$vars.rightFrontVisible"
               },
               {
                 name: "pole links achter",
@@ -61192,9 +61213,9 @@
                 position: [
                   "$size.width/2-6",
                   "$size.height/2",
-                  "$size.depth/2-6",
+                  "$size.depth/2-6"
                 ],
-                visible: "$vars.leftBackVisible",
+                visible: "$vars.leftBackVisible"
               },
               {
                 name: "pole rechts achter",
@@ -61202,43 +61223,43 @@
                 position: [
                   "$-size.width/2+6",
                   "$size.height/2",
-                  "$size.depth/2-6",
+                  "$size.depth/2-6"
                 ],
-                visible: "$vars.rightBackVisible",
+                visible: "$vars.rightBackVisible"
               },
               {
                 name: "roof",
                 type: "element",
                 id: "$style.roofType",
-                position: [0, "$size.height", 0],
+                position: [0, "$size.height", 0]
               },
               {
                 name: "sideLeft",
                 type: "siding",
                 id: "sideLeft",
                 position: [0, "$wallHeights.left+9", 0],
-                visible: "$wallHeights.left<=size.height-10",
+                visible: "$wallHeights.left<=size.height-10"
               },
               {
                 name: "sideRight",
                 type: "siding",
                 id: "sideRight",
                 position: [0, "$wallHeights.right+9", 0],
-                visible: "$wallHeights.right<=size.height-10",
+                visible: "$wallHeights.right<=size.height-10"
               },
               {
                 name: "sideBack",
                 type: "siding",
                 id: "sideBack",
                 position: [0, "$wallHeights.back+9", 0],
-                visible: "$wallHeights.back<=size.height-10",
+                visible: "$wallHeights.back<=size.height-10"
               },
               {
                 name: "sideFront",
                 type: "siding",
                 id: "sideFront",
                 position: [0, "$wallHeights.front+9", 0],
-                visible: "$wallHeights.front<=size.height-10",
+                visible: "$wallHeights.front<=size.height-10"
               },
               {
                 name: "wallLeft",
@@ -61246,7 +61267,7 @@
                 id: "wallLeft",
                 position: [0, 6, 0],
                 visible:
-                  "$wallHeights.left>0 && !(wallHeights.left>size.height-10 && homography.enabled)",
+                  "$wallHeights.left>0 && !(wallHeights.left>size.height-10 && homography.enabled)"
               },
               {
                 name: "wallRight",
@@ -61254,7 +61275,7 @@
                 id: "wallRight",
                 position: [0, 6, 0],
                 visible:
-                  "$wallHeights.right>0  && !(wallHeights.right>size.height-10 && homography.enabled)",
+                  "$wallHeights.right>0  && !(wallHeights.right>size.height-10 && homography.enabled)"
               },
               {
                 name: "wallBack",
@@ -61262,7 +61283,7 @@
                 id: "wallBack",
                 position: [0, 6, 0],
                 visible:
-                  "$wallHeights.back>0  && !(wallHeights.back>size.height-10 && homography.enabled)",
+                  "$wallHeights.back>0  && !(wallHeights.back>size.height-10 && homography.enabled)"
               },
               {
                 name: "wallFront",
@@ -61270,36 +61291,36 @@
                 id: "wallFront",
                 position: [0, 6, 0],
                 visible:
-                  "$wallHeights.front>0  && !(wallHeights.front>size.height-10 && homography.enabled)",
+                  "$wallHeights.front>0  && !(wallHeights.front>size.height-10 && homography.enabled)"
               },
               {
                 name: "top frame",
                 type: "siding",
                 id: "top frame",
-                position: [0, "$size.height", 0],
+                position: [0, "$size.height", 0]
               },
               {
                 name: "furniture",
                 type: "element",
                 id: "diningtable",
                 position: [0, 0, 0],
-                visible: "$!homography.enabled",
+                visible: "$!homography.enabled"
               },
               {
                 name: "indoorplant",
                 type: "element",
                 id: "indoorplant",
                 position: [0, 0, 0],
-                visible: "$!homography.enabled",
+                visible: "$!homography.enabled"
               },
               {
                 name: "gridanchor",
                 type: "placeholder",
                 id: "gridanchor",
-                position: [0, 0, "$size.depth/2"],
-              },
-            ],
-          },
+                position: [0, 0, "$size.depth/2"]
+              }
+            ]
+          }
         ],
         shapes: [
           {
@@ -61308,30 +61329,30 @@
               ["$-size.width/2", "$size.depth/2"],
               ["$-size.width/2", "$-size.depth/2"],
               ["$size.width/2", "$-size.depth/2"],
-              ["$size.width/2", "$size.depth/2"],
-            ],
+              ["$size.width/2", "$size.depth/2"]
+            ]
           },
           {
             id: "sideplan",
             vertices: [
               [
                 "$-size.width/2-(wallHeights.right<size.height-10?-6:8)",
-                "$size.depth/2+(wallHeights.back<size.height-10?-6:8)",
+                "$size.depth/2+(wallHeights.back<size.height-10?-6:8)"
               ],
               [
                 "$-size.width/2-(wallHeights.right<size.height-10?-6:8)",
-                "$-size.depth/2-(wallHeights.front<size.height-10?-6:8)",
+                "$-size.depth/2-(wallHeights.front<size.height-10?-6:8)"
               ],
               [
                 "$size.width/2+(wallHeights.left<size.height-10?-6:8)",
-                "$-size.depth/2-(wallHeights.front<size.height-10?-6:8)",
+                "$-size.depth/2-(wallHeights.front<size.height-10?-6:8)"
               ],
               [
                 "$size.width/2+(wallHeights.left<size.height-10?-6:8)",
-                "$size.depth/2+(wallHeights.back<size.height-10?-6:8)",
-              ],
-            ],
-          },
+                "$size.depth/2+(wallHeights.back<size.height-10?-6:8)"
+              ]
+            ]
+          }
         ],
         sidings: [
           {
@@ -61342,9 +61363,9 @@
               {
                 id: "sideplan edge 2",
                 layerIds: "front/back",
-                dropTargetId: "$size.height>wallHeights.front?'sideFront':''",
-              },
-            ],
+                dropTargetId: "$size.height>wallHeights.front?'sideFront':''"
+              }
+            ]
           },
           {
             id: "sideBack",
@@ -61354,9 +61375,9 @@
               {
                 id: "sideplan edge 0",
                 layerIds: "front/back",
-                dropTargetId: "$size.height>wallHeights.back?'sideBack':''",
-              },
-            ],
+                dropTargetId: "$size.height>wallHeights.back?'sideBack':''"
+              }
+            ]
           },
           {
             id: "sideLeft",
@@ -61366,9 +61387,9 @@
               {
                 id: "sideplan edge 3",
                 layerIds: "left/right",
-                dropTargetId: "$size.height>wallHeights.left?'sideLeft':''",
-              },
-            ],
+                dropTargetId: "$size.height>wallHeights.left?'sideLeft':''"
+              }
+            ]
           },
           {
             id: "sideRight",
@@ -61378,9 +61399,9 @@
               {
                 id: "sideplan edge 1",
                 layerIds: "left/right",
-                dropTargetId: "$size.height>wallHeights.right?'sideRight':''",
-              },
-            ],
+                dropTargetId: "$size.height>wallHeights.right?'sideRight':''"
+              }
+            ]
           },
           {
             id: "wallFront",
@@ -61389,9 +61410,9 @@
             sides: [
               {
                 id: "sideplan edge 2",
-                layerIds: "wall",
-              },
-            ],
+                layerIds: "wall"
+              }
+            ]
           },
           {
             id: "wallBack",
@@ -61400,9 +61421,9 @@
             sides: [
               {
                 id: "sideplan edge 0",
-                layerIds: "wall",
-              },
-            ],
+                layerIds: "wall"
+              }
+            ]
           },
           {
             id: "wallLeft",
@@ -61411,9 +61432,9 @@
             sides: [
               {
                 id: "sideplan edge 3",
-                layerIds: "wall",
-              },
-            ],
+                layerIds: "wall"
+              }
+            ]
           },
           {
             id: "wallRight",
@@ -61422,9 +61443,9 @@
             sides: [
               {
                 id: "sideplan edge 1",
-                layerIds: "wall",
-              },
-            ],
+                layerIds: "wall"
+              }
+            ]
           },
           {
             id: "top frame",
@@ -61433,39 +61454,39 @@
             sides: [
               {
                 id: "$wallHeights.back<size.height-10?'floorplan edge 0':'blah'",
-                layerIds: "top frame",
+                layerIds: "top frame"
               },
               {
                 id: "$wallHeights.right<size.height-10?'floorplan edge 1':'blah'",
-                layerIds: "top frame",
+                layerIds: "top frame"
               },
               {
                 id: "$wallHeights.front<size.height-10?'floorplan edge 2':'blah'",
-                layerIds: "top frame",
+                layerIds: "top frame"
               },
               {
                 id: "$wallHeights.left<size.height-10?'floorplan edge 3':'blah'",
-                layerIds: "top frame",
-              },
-            ],
-          },
+                layerIds: "top frame"
+              }
+            ]
+          }
         ],
         planes: [
           {
             id: "floor",
             shapeId: "floorplan",
-            layerIds: ["floor"],
+            layerIds: ["floor"]
           },
           {
             id: "wall",
             shapeId: "wallplan",
-            layerIds: ["wall"],
+            layerIds: ["wall"]
           },
           {
             id: "shadow floor",
             shapeId: "floorplan",
-            layerIds: ["shadow plane"],
-          },
+            layerIds: ["shadow plane"]
+          }
         ],
         layers: [
           {
@@ -61473,21 +61494,21 @@
             materialId: "bluestone tiles",
             height: 0,
             expand: 50,
-            thickness: 5,
+            thickness: 5
           },
           {
             id: "wall",
             materialId: "brick",
             height: -7.5,
             expand: 7.5,
-            thickness: 15,
+            thickness: 15
           },
           {
             id: "shadow plane",
             materialId: "shadowMaterial",
             height: -5,
             expand: 5e3,
-            thickness: 1,
+            thickness: 1
           },
           {
             id: "front/back",
@@ -61496,7 +61517,7 @@
             expand: 0,
             thickness: 1.8,
             visible: !1,
-            glassDecorationId: "palen voor/achter",
+            glassDecorationId: "palen voor/achter"
           },
           {
             id: "left/right",
@@ -61505,15 +61526,15 @@
             expand: 0,
             thickness: 1.8,
             visible: !1,
-            glassDecorationId: "palen links/rechts",
+            glassDecorationId: "palen links/rechts"
           },
           {
             id: "top frame",
             materialId: "base",
             height: -10,
             expand: 0,
-            thickness: 10,
-          },
+            thickness: 10
+          }
         ],
         borders: [],
         droppedElements: "$elements.droppedElements",
@@ -61524,8 +61545,8 @@
               "sideLeft",
               "sideRight",
               "sideFront",
-              "sideBack",
-            ],
+              "sideBack"
+            ]
           },
           {
             elementId: "gondula",
@@ -61533,8 +61554,8 @@
               "sideLeft",
               "sideRight",
               "sideFront",
-              "sideBack",
-            ],
+              "sideBack"
+            ]
           },
           {
             elementId: "schuifraam",
@@ -61542,8 +61563,8 @@
               "sideLeft",
               "sideRight",
               "sideFront",
-              "sideBack",
-            ],
+              "sideBack"
+            ]
           },
           {
             elementId: "vast raam",
@@ -61551,8 +61572,8 @@
               "sideLeft",
               "sideRight",
               "sideFront",
-              "sideBack",
-            ],
+              "sideBack"
+            ]
           },
           {
             elementId: "Glazen schuifdeuren",
@@ -61560,17 +61581,17 @@
               "sideLeft",
               "sideRight",
               "sideFront",
-              "sideBack",
-            ],
-          },
-        ],
+              "sideBack"
+            ]
+          }
+        ]
       },
       locales: {
         nl: {
           sideMenuTitle1: "Interactief",
           sideMenuScreens: "Dicht/open",
           sideMenuSun: "Positie Zon",
-          sideMenuRoof: "Dak",
+          sideMenuRoof: "Roof Top Color",
           generalbuttonnext: "Volgende",
           generalbuttonprevious: "Vorige",
           generalno: "Neen",
@@ -61585,10 +61606,10 @@
           step2Blinds: "Lamellen",
           step2framecolor: "Basiskleur",
           step2freeStanding: "Vrijstaand model",
-          step2roofcolor: "Dak",
+          step2roofcolor: "Roof Color",
           step2screencolor: "Screens",
           step2title2: "Bepaal de afmetingen",
-          step2width: "Breedte",
+          step2width: "Length",
           step2roofAngleDegrees: "Angle of the roof",
           step2depth: "Diepte",
           step2height: "Hoogte voorzijde",
@@ -61626,13 +61647,13 @@
           photoBackgroundPicked: "Foto:",
           photoBackgroundStockModern: "Modern huis",
           photoBackgroundUpload: "Upload een foto van uw tuin / terras",
-          photoUploadTitle: "Upload",
+          photoUploadTitle: "Upload"
         },
         en: {
           sideMenuTitle1: "Interaction",
           sideMenuScreens: "Closed/open",
           sideMenuSun: "Position Sun",
-          sideMenuRoof: "Louvers",
+          sideMenuRoof: "Roof Top Color",
           generalbuttonnext: "next",
           generalbuttonprevious: "back",
           generalno: "No",
@@ -61647,10 +61668,10 @@
           step2Blinds: "Louvers",
           step2framecolor: "Base color",
           step2freeStanding: "Freestanding model",
-          step2roofcolor: "Louvers",
+          step2roofcolor: "Roof Color",
           step2screencolor: "Screens",
           step2title2: "Dimensions",
-          step2width: "Width",
+          step2width: "Length",
           step2roofAngleDegrees: "Angle of the roof",
           step2depth: "Depth",
           step2height: "Height",
@@ -61689,13 +61710,13 @@
           photoBackgroundStockModern: "Modern house",
           photoBackgroundUpload: "Upload your own picture",
           photoUploadTitle: "Upload",
-          Colour: "Color",
+          Colour: "Color"
         },
         de: {
           sideMenuTitle1: "Interaktiv",
           sideMenuScreens: "schließen/offen",
           sideMenuSun: "Position der Sonne",
-          sideMenuRoof: "Lamellen",
+          sideMenuRoof: "Roof Top Color",
           generalbuttonnext: "Weiter",
           generalbuttonprevious: "Zurück",
           generalno: "Nein",
@@ -61710,10 +61731,10 @@
           step2Blinds: "Lamellen",
           step2framecolor: "Basisfarbe",
           step2freeStanding: "Freistehend Model",
-          step2roofcolor: "Lamellen",
+          step2roofcolor: "Roof Color",
           step2screencolor: "Markisen",
           step2title2: "Legen Sie die Größe fest",
-          step2width: "Breite",
+          step2width: "Length",
           step2roofAngleDegrees: "Angle of the roof",
           step2depth: "Tiefe",
           step2height: "Höhe",
@@ -61753,13 +61774,13 @@
           photoBackgroundStockModern: "Modernes Haus",
           photoBackgroundUpload:
             "Laden Sie ein Foto Ihres Gartens / Ihrer Terrasse hoch.",
-          photoUploadTitle: "Hochladen",
+          photoUploadTitle: "Hochladen"
         },
         fr: {
           sideMenuTitle1: "Interactif",
           sideMenuScreens: "Fermés/ouverts",
           sideMenuSun: "Position du soleil",
-          sideMenuRoof: "Lames",
+          sideMenuRoof: "Roof Top Color",
           generalbuttonnext: "Suivant",
           generalbuttonprevious: "Précédent",
           generalno: "Non",
@@ -61774,10 +61795,10 @@
           step2Blinds: "Lames",
           step2framecolor: "Base",
           step2freeStanding: "Model autoportant",
-          step2roofcolor: "Lames",
+          step2roofcolor: "Roof Color",
           step2screencolor: "Écrans",
           step2title2: "Définissez les dimensions",
-          step2width: "Largeur",
+          step2width: "Length",
           step2roofAngleDegrees: "Angle of the roof",
           step2depth: "Profondeur",
           step2height: "Hauteur",
@@ -61816,9 +61837,9 @@
           photoBackgroundStockModern: "Fond avec maison moderne",
           photoBackgroundUpload:
             "Téléchargez une photo de votre jardin / terrasse",
-          photoUploadTitle: "Téléchargez",
-        },
-      },
+          photoUploadTitle: "Téléchargez"
+        }
+      }
     };
     var c,
       u = n(3),
